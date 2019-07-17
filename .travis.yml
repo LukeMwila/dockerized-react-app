@@ -1,0 +1,11 @@
+language: generic 
+
+sudo: required # we need super user permissions
+services:
+  - docker
+
+before_install:
+  - docker build -t lukondefmwila/dockerized-react-app -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true lukondefmwila/dockerized-react-app npm run test -- --coverage
