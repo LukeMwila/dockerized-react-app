@@ -1,6 +1,6 @@
 language: generic
 
-sudo: required # we need super user permissions
+sudo: required
 services:
   - docker
 
